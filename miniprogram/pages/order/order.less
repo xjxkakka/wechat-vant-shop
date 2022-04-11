@@ -1,0 +1,76 @@
+/* pages/order/order.less */
+
+.orderList{
+  margin-top: 20rpx;
+  height: 90vh;
+  width: 100vw;
+  .order-item{
+    margin:30rpx auto;
+    width: 700rpx;
+    background-color: #FFF;
+    border-radius: 10rpx;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30rpx 60rpx rgba(0,0,0,0.1);
+
+    .top{
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .t1{
+        padding-left: 20rpx;
+      }
+      .t2{
+        font-size: 28rpx;
+        display: inline-block;
+        width: 122rpx;
+        height: 54rpx;
+        line-height: 54rpx;
+        border-radius: 10rpx;
+        color: #FFF;
+        text-align: center;
+        background-color: #089708;
+        margin-right: 34rpx;
+      }
+    }
+    .center-wrap{
+      display: flex;
+      flex-direction: column;
+      .center{
+        height: 260rpx;
+        width: 90%;
+        background-color: pink;
+        margin: 0 auto;
+        background-color: rgba(169, 169, 169, 0.1);
+        display: flex;
+        position: relative;
+        image{
+          height: 180rpx;
+          width: 170rpx;
+          margin: 40rpx;
+        }
+        .title-wrap{
+          font-size: 26rpx;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin: 40rpx 0;
+        }
+        .count{
+          font-size: 28rpx;
+          position: absolute;
+          right: 20rpx;
+          top: 170rpx;
+        }
+      }
+
+    }
+    .bottom{
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  }

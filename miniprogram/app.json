@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/goods/goods",
+    "pages/cart/cart",
+    "pages/center/center",
+    "pages/login/login",
+    "pages/phone/phone",
+    "pages/goodsdetail/goodsdetail",
+    "pages/search/search",
+    "pages/register/register",
+    "pages/address/address",
+    "pages/changeaddress/changeaddress",
+    "pages/pay/pay",
+    "pages/order/order"
+
+    
+
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "购物",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+    "van-area": "@vant/weapp/area/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-popup": "@vant/weapp/popup/index"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#fc4327",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/page.png",
+        "selectedIconPath": "images/pageA.png"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "商品",
+        "iconPath": "images/goods.png",
+        "selectedIconPath": "images/goodsA.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/shop.png",
+        "selectedIconPath": "images/shopA.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "我的",
+        "iconPath": "images/m.png",
+        "selectedIconPath": "images/mA.png"
+      }
+    ]
+  },
+  "useExtendedLib": {
+    "weui": true
+  }
+}

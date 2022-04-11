@@ -1,0 +1,57 @@
+<!--pages/changeaddress/changeaddress.wxml-->
+<view>
+<van-cell-group>
+    <van-field
+            value="{{ username }}"
+            clearable
+            label="姓名"
+            placeholder="请输入姓名"
+            bind:change="handleResult"
+            data-type="0"
+    />
+
+    <van-field
+            value="{{ phone }}"
+            label="电话"
+            placeholder="请输入电话"
+            bind:change="handleResult"
+            data-type="1"
+    />
+    <van-field
+            value="{{provincial}}"
+            label="地区"
+            placeholder="地区"
+            right-icon="arrow"
+            readonly
+            bindtap="showPopup"
+    />
+    <van-field
+            class="default"
+            value="{{ detailAddress }}"
+            label="详细地址"
+            placeholder="街道门牌信息"
+            type="textarea"
+            autosize
+            bind:change="handleResult"
+            data-type="2"
+    >
+    </van-field>
+    <view class="default-address">
+        设置为默认收货地址<van-switch checked="{{ checked }}" size="40rpx" bind:change="onChange" />
+    </view>
+</van-cell-group>
+</view>
+<view class="btn">
+    <van-button round block type="danger" bindtap="handleSave">保存</van-button>
+</view>
+<van-popup
+        show="{{ show }}"
+        position="bottom"
+        custom-style="height: 50%;"
+        bind:close="onClose"
+>
+    <van-area area-list="{{ areaList }}" bind:confirm="changeProvincial" />
+</van-popup>
+
+
+

@@ -1,0 +1,50 @@
+<!--pages/register/register.wxml-->
+<van-cell-group>
+    <van-field
+            value="{{ username }}"
+            required
+            clearable
+            label="用户名"
+            placeholder="请输入用户名"
+            bind:blur="handleFinish"
+            data-type="0"
+    />
+    <van-field
+            value="{{ email }}"
+            type="email"
+            label="邮箱"
+            placeholder="请输入邮箱"
+            required
+            clearable
+            bind:blur="handleFinish"
+            data-type="1"
+    />
+    <van-field
+            value="{{ password }}"
+            type="password"
+            label="密码"
+            placeholder="请输入密码"
+            required
+            clearable
+            bind:blur="handleFinish"
+            data-type="2"
+    />
+    <van-field
+            value="{{ password2 }}"
+            type="password"
+            label="密码"
+            placeholder="请再次输入密码"
+            required
+            clearable
+            bind:blur="handleFinish"
+            data-type="3"
+    />
+</van-cell-group>
+
+<view class="register">
+    <van-button type="primary" block bindtap="handleRegister" >注册</van-button>
+</view>
+
+<view class="phone" bindtap="handlePhone">
+    <text>已有账号?点击跳转</text>
+</view>

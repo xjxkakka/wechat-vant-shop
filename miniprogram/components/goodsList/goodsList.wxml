@@ -1,0 +1,15 @@
+<!--components/goodsList.wxml-->
+<view class="goods-wrap">
+    <view class="goods-item" wx:for="{{goods}}" wx:key="index" bindtap="handleDetail" data-id="{{item.id}}" >
+        <view class="pic">
+            <image mode="widthFix" src="{{item.cover_url}}"></image>
+        </view>
+        <view class="text">
+            {{item.title}}
+        </view>
+        <view class="desc">
+            <view style="color:red">￥{{item.price}}</view>
+            <view style="color:gray">销量:{{item.sales}}</view>
+        </view>
+    </view>
+</view>

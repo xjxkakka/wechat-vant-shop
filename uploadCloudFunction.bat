@@ -1,0 +1,1 @@
+"D:\Program Files\tencent\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-6g4om8410580d295 --n quickstartFunctions --r --project "D:\IdeaProjects\wechat\vant-shop" --report_first --report

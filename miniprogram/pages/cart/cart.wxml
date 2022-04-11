@@ -1,0 +1,52 @@
+<!--pages/cart/cart.wxml-->
+<view class="noLogin" wx:if="{{!isToken}}">
+    <view class="login">
+        <text>登录后可同步账号购物车中的商品</text>
+        <van-button round  type="danger">登录</van-button>
+    </view>
+
+    <view class="title">
+        登录后同步购物车中的商品
+    </view>
+</view>
+
+<scroll-view scroll-y class="cart-wrap">
+    <van-swipe-cell
+            id="swipe-cell"
+            right-width="{{ 65 }}"
+            async-close
+            bind:close="onClose"
+            wx:for="{{cartList}}"
+            wx:key="index"
+            data-id="{{item.id}}"
+            selectComponent
+    >
+        <van-cell-group>
+           <view class="goods-item">
+               <van-checkbox value="{{item.is_checked==1}}" bind:change="onChange" data-id="{{item}}"></van-checkbox>
+               <image src="{{item.goods.cover_url}}" mode="widthFix"></image>
+               <view class="title">
+                   <text>{{item.goods.title}}</text>
+                   <text style="color:gray">{{item.goods.description}}</text>
+               </view>
+               <view class="price">
+                   ￥{{item.goods.price}}
+               </view>
+               <van-stepper value="{{ item.num }}" async-change bind:change="onStepperChange" data-id="{{item}}" />
+           </view>
+        </van-cell-group>
+        <view slot="right"  class="van-swipe-cell__right" >
+         <text>删除</text>
+        </view>
+
+    </van-swipe-cell>
+
+</scroll-view>
+<van-submit-bar
+        price="{{ total }}"
+        button-text="提交订单"
+        bind:submit="onClickButton"
+>
+    <van-checkbox value="{{ checked }}" bind:change="handleChange">全选</van-checkbox>
+</van-submit-bar>
+<van-dialog id="van-dialog"   />

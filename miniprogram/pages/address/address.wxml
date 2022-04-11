@@ -1,0 +1,21 @@
+<!--pages/address/address.wxml-->
+<view class="page-wrap">
+<scroll-view scroll-y class="address-wrap">
+<view class="address-item" wx:for="{{addressList}}" wx:key="index" bindtap="handlePay" data-item="{{item}}">
+    <view class="name">
+        <text class="t1">{{item.name}}</text>
+        <text>{{item.phone}}</text>
+    </view>
+    <view class="address">
+       {{item.province}}{{item.city}}{{item.county}}{{item.address}}
+    </view>
+    <view class="icon" bindtap="changeAddressFn" data-id="{{item.id}}">
+        <van-icon name="edit" size="40rpx" />
+    </view>
+</view>
+</scroll-view>
+    <view class="addAddress" bindtap="newAddress">
+        <van-button type="danger" round block>
+            <van-icon name="plus" color="white"  /> 新建收货地址</van-button>
+    </view>
+</view>

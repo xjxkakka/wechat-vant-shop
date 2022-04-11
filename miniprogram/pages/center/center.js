@@ -1,0 +1,99 @@
+// pages/center/center.js
+Page({
+
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        userInfo:{},
+        token:false,
+        email:''
+    },
+    //跳转微信登录页面
+    handleLogin(){
+      wx.navigateTo({
+          url:'/pages/login/login'
+      })
+    },
+    //退出登录
+    handleLogout(){
+      wx.removeStorageSync("token")
+      wx.removeStorageSync("email")
+      wx.removeStorageSync("userInfo")
+        this.setData({
+            token:false
+        })
+    },
+    handleAddress(){
+      wx.navigateTo({
+          url:'/pages/address/address'
+      })
+    },
+    handleOrder(){
+        wx.navigateTo({
+            url:'/pages/order/order'
+        })
+    },
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function (options) {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+        if (wx.getStorageSync("token")){
+            //获取userInfo
+            this.setData({
+                userInfo:wx.getStorageSync("userInfo"),
+                email:wx.getStorageSync("email"),
+                token:true
+            })
+        }
+    },
+
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function () {
+
+    },
+
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function () {
+
+    },
+
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom: function () {
+
+    },
+
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function () {
+
+    }
+})

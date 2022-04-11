@@ -1,0 +1,12 @@
+<view class="Info-wrap">
+    <view class="content">
+<view class="text">
+    <text>欢迎登录图书商城</text>
+</view>
+
+<view class="btn">
+    <van-button bindtap="handleAuth"  block  size="normal " type="primary">微信登录</van-button>
+</view>
+
+    </view>
+</view>

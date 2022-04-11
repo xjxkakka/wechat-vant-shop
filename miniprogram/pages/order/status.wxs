@@ -1,0 +1,21 @@
+function TypeStatus(num){
+    if (num==1){
+        return "下单"
+    }else if (num==2){
+        return "支付"
+
+    }else if (num==3){
+        return "发货"
+
+    }else if (num==4){
+        return "收货"
+
+    }else if (num==5){
+        return "过期"
+    }
+}
+
+//导出
+module.exports={
+    TypeStatus:TypeStatus
+}

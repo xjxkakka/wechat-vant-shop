@@ -1,0 +1,53 @@
+/* pages/goods/goods.less */
+.classify-wrap{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  .classify{
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    .sidebar-wrap{
+      height: 92%;
+      width: 170rpx;
+    }
+
+    //右边图书
+    .content {
+      height: 92%;
+          width: 590rpx;
+          display: flex;
+      flex-wrap: wrap;
+      .book-item{
+        height: 260rpx;
+        width: 260rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 15rpx;
+        margin-bottom: 20rpx;
+        image{
+          width: 200rpx;
+          height: 200rpx;
+        }
+        text{
+          height: 60rpx;
+          width: 100%;
+          line-height: 60rpx;
+          font-size: 26rpx;
+          text-align: center;
+          /*  多行文本溢出*/
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1; /*想省略几行就写几*/
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+
+
+
+  }
+}

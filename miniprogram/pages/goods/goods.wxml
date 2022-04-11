@@ -1,0 +1,33 @@
+<!--pages/goods/goods.wxml-->
+<view class="classify-wrap">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:search="handleSearch" />
+
+    <view class="classify">
+<!--        左边-->
+    <scroll-view scroll-y class="sidebar-wrap">
+    <van-sidebar active-key="{{ activeKey }}">
+        <block wx:for="{{categories}}" wx:key="index">
+        <block wx:for="{{item.children}}" wx:for-item="children"  wx:key="id" >
+        <van-sidebar-item title="{{children.name}}" bindtap="changeClassify" data-id="{{children.id}}"/>
+        </block>
+        </block>
+    </van-sidebar>
+    </scroll-view>
+<!--        右边-->
+
+            <scroll-view class="content"  scroll-y enable-flex="true" wx:if="{{again}}">
+
+                    <view class="book-item" wx:for="{{category_List}}" wx:key="index" bindtap="goDetail" data-id="{{item.id}}">
+                        <image src="{{item.cover_url}}"></image>
+                        <text>{{item.title}}</text>
+                    </view>
+
+
+            </scroll-view>
+
+        <view wx:else style="text-align: center;">
+            抱歉，没有找到商品~
+        </view>
+
+</view>
+</view>

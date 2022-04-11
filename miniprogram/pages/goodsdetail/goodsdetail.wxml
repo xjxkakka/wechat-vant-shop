@@ -1,0 +1,49 @@
+<!--pages/goodsdetail/goodsdetail.wxml-->
+<import src="../../wxParse/wxParse"/>
+<view class="detail-wrap">
+    <view class="detail">
+        <view class="pic">
+        <image style="height:200px" mode="aspectFit" src="{{goods.cover_url}}" bindtap="handleTap" data-current="{{goods.cover_url}}"></image>
+        </view>
+        <view class="bookname">{{goods.title}}</view>
+        <view class="desc">
+            <text style="color:red">￥{{goods.price}}</text>
+            <text>销量 {{goods.sales}}</text>
+        </view>
+
+    </view>
+    <van-tabs active="{{ active }}" bind:change="onChange">
+        <van-tab title="商品详情">
+            <!-- {{details}} -->
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </van-tab>
+        <van-tab title="商品评论">评论暂无</van-tab>
+
+
+        <van-tab title="推荐商品">
+            <goodsList goods="{{like_goods}}"></goodsList>
+        </van-tab>
+    </van-tabs>
+    <view class="goodsActive">
+        <van-goods-action>
+            <van-goods-action-icon text="收藏" bind:click="onClickIcon" data-index="0">
+                <view slot="icon" >
+                   <van-icon wx:if="{{goods.is_collect==0}}" name="star-o" custom-style="margin-bottom:10rpx" size="40rpx" />
+                   <van-icon wx:else name="star" color="#CD7F32" custom-style="margin-bottom:10rpx" size="40rpx" />
+                </view>
+
+            </van-goods-action-icon>
+
+            <van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" data-index="1" />
+
+
+            <van-goods-action-button
+                    text="加入购物车"
+                    type="warning"
+                    bind:click="onClickButton"
+                    data-index="0"
+            />
+            <van-goods-action-button text="立即购买" bind:click="onClickButton" data-index="1" />
+        </van-goods-action>
+    </view>
+</view>

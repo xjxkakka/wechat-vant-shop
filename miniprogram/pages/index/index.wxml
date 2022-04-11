@@ -1,0 +1,22 @@
+<swiper indicator-dots autoplay circular indicator-color="#dcdee0" indicator-active-color="skyblue">
+    <swiper-item wx:for="{{slides}}" wx:key="index">
+        <image src="{{item.img_url}}" mode="widthFix"></image>
+    </swiper-item>
+</swiper>
+<van-search bind:click-input="handleSearch" readonly placeholder="请输入搜索关键词" />
+        <!--选项卡-->
+<van-sticky>
+<view class="tab-control">
+    <view bindtap="handleActive" class="{{active==0?'active':''}} tab-control-item" data-index="0">默认</view>
+    <view bindtap="handleActive" class="{{active==1?'active':''}} tab-control-item" data-index="1">销量</view>
+    <view bindtap="handleActive" class="{{active==2?'active':''}} tab-control-item" data-index="2">推荐</view>
+    <view bindtap="handleActive" class="{{active==3?'active':''}} tab-control-item" data-index="3">最新</view>
+</view>
+        </van-sticky>
+<!--商品列表-->
+
+<goodsList goods="{{goods}}"></goodsList>
+
+<view wx:if="{{finished}}" style="text-align: center;">
+    到底了....
+</view>

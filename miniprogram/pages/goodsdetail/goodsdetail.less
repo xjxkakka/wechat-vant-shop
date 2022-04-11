@@ -1,0 +1,79 @@
+/* pages/goodsdetail/goodsdetail.less */
+@import "/wxParse/wxParse.wxss";
+.detail-wrap{
+  height: 100%;
+  width: 100%;
+  .detail {
+    width: 90%;
+    margin: 0 auto;
+
+    .pic {
+      display: inline-block;
+
+      width: 100%;
+
+      image {
+        height: 400rpx!important;
+      }
+    }
+
+    .bookname {
+      font-size: 36rpx;
+      font-weight: bolder;
+    }
+
+    .desc {
+      height: 100rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20rpx;
+    }
+  }
+  .goods-wrap{
+    margin-top: 40rpx;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .goods-item{
+      margin-bottom: 40rpx;
+      padding: 0 20rpx;
+      width: 280rpx;
+      height: 480rpx;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      box-shadow: 0 12rpx 20rpx rgba(0,0,0,0.1);
+    }
+    .pic{
+
+      margin-top: 20rpx;
+      image{
+        width: 280rpx;
+        height: 280rpx;
+      }
+    }
+    .text{
+      text-align: center;
+      margin: 0 20rpx;
+      font-size: 28rpx;
+      width: 100%;
+      height: 80rpx;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /*想省略几行就写几*/
+      -webkit-box-orient: vertical;
+    }
+    .desc{
+      margin-top: 10rpx;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

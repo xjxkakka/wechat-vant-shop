@@ -1,0 +1,153 @@
+<!--pages/order/order.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="全部">
+        <scroll-view scroll-y class="orderList">
+            <!--引入 wxs 文件-->
+            <wxs src="status.wxs" module="calObj"></wxs>
+            <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+                <view class="top">
+                    <text class="t1">共计{{item.orderDetails.data.length}}件商品</text>
+                    <text class="t2">{{calObj.TypeStatus(item.status)}}</text>
+                </view>
+                <view class="center-wrap">
+                    <view class="center" wx:for="{{item.orderDetails.data}}" wx:for-item="data" wx:key="id">
+                        <image src="{{data.goods.cover_url}}" mode="widthFix"></image>
+                        <view class="title-wrap">
+                            <view class="title">
+                                <view>{{data.goods.title}}</view>
+                                <view style="color:gray">{{data.goods.description}}</view>
+                            </view>
+                            <view style="color:red; font-size: 16px;">￥{{data.price}}</view>
+                        </view>
+                        <view class="count">x {{data.num}}</view>
+                    </view>
+
+                </view>
+                <view class="bottom">
+                    <view>{{item.created_at}}</view>
+                    <van-button type="primary" size="small">确认收货</van-button>
+                </view>
+            </view>
+        </scroll-view>
+    </van-tab>
+    <van-tab title="支付">
+        <scroll-view scroll-y class="orderList">
+            <!--引入 wxs 文件-->
+            <wxs src="status.wxs" module="calObj"></wxs>
+            <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+                <view class="top">
+                    <text class="t1">共计{{item.orderDetails.data.length}}件商品</text>
+                    <text class="t2">{{calObj.TypeStatus(item.status)}}</text>
+                </view>
+                <view class="center-wrap">
+                    <view class="center" wx:for="{{item.orderDetails.data}}" wx:for-item="data" wx:key="id">
+                        <image src="{{data.goods.cover_url}}" mode="widthFix"></image>
+                        <view class="title-wrap">
+                            <view class="title">
+                                <view>{{data.goods.title}}</view>
+                                <view style="color:gray">{{data.goods.description}}</view>
+                            </view>
+                            <view style="color:red; font-size: 16px;">￥{{data.price}}</view>
+                        </view>
+                        <view class="count">x {{data.num}}</view>
+                    </view>
+
+                </view>
+                <view class="bottom">
+                    <view>{{item.created_at}}</view>
+                    <van-button type="primary" size="small">确认收货</van-button>
+                </view>
+            </view>
+        </scroll-view>
+    </van-tab>
+    <van-tab title="发货">
+        <scroll-view scroll-y class="orderList">
+            <!--引入 wxs 文件-->
+            <wxs src="status.wxs" module="calObj"></wxs>
+            <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+                <view class="top">
+                    <text class="t1">共计{{item.orderDetails.data.length}}件商品</text>
+                    <text class="t2">{{calObj.TypeStatus(item.status)}}</text>
+                </view>
+                <view class="center-wrap">
+                    <view class="center" wx:for="{{item.orderDetails.data}}" wx:for-item="data" wx:key="id">
+                        <image src="{{data.goods.cover_url}}" mode="widthFix"></image>
+                        <view class="title-wrap">
+                            <view class="title">
+                                <view>{{data.goods.title}}</view>
+                                <view style="color:gray">{{data.goods.description}}</view>
+                            </view>
+                            <view style="color:red; font-size: 16px;">￥{{data.price}}</view>
+                        </view>
+                        <view class="count">x {{data.num}}</view>
+                    </view>
+
+                </view>
+                <view class="bottom">
+                    <view>{{item.created_at}}</view>
+                    <van-button type="primary" size="small">确认收货</van-button>
+                </view>
+            </view>
+        </scroll-view>
+    </van-tab>
+    <van-tab title="收货">
+        <scroll-view scroll-y class="orderList">
+            <!--引入 wxs 文件-->
+            <wxs src="status.wxs" module="calObj"></wxs>
+            <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+                <view class="top">
+                    <text class="t1">共计{{item.orderDetails.data.length}}件商品</text>
+                    <text class="t2">{{calObj.TypeStatus(item.status)}}</text>
+                </view>
+                <view class="center-wrap">
+                    <view class="center" wx:for="{{item.orderDetails.data}}" wx:for-item="data" wx:key="id">
+                        <image src="{{data.goods.cover_url}}" mode="widthFix"></image>
+                        <view class="title-wrap">
+                            <view class="title">
+                                <view>{{data.goods.title}}</view>
+                                <view style="color:gray">{{data.goods.description}}</view>
+                            </view>
+                            <view style="color:red; font-size: 16px;">￥{{data.price}}</view>
+                        </view>
+                        <view class="count">x {{data.num}}</view>
+                    </view>
+
+                </view>
+                <view class="bottom">
+                    <view>{{item.created_at}}</view>
+                    <van-button type="primary" size="small">确认收货</van-button>
+                </view>
+            </view>
+        </scroll-view>
+    </van-tab>
+    <van-tab title="过期">
+        <scroll-view scroll-y class="orderList">
+            <!--引入 wxs 文件-->
+            <wxs src="status.wxs" module="calObj"></wxs>
+            <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+                <view class="top">
+                    <text class="t1">共计{{item.orderDetails.data.length}}件商品</text>
+                    <text class="t2">{{calObj.TypeStatus(item.status)}}</text>
+                </view>
+                <view class="center-wrap">
+                    <view class="center" wx:for="{{item.orderDetails.data}}" wx:for-item="data" wx:key="id">
+                        <image src="{{data.goods.cover_url}}" mode="widthFix"></image>
+                        <view class="title-wrap">
+                            <view class="title">
+                                <view>{{data.goods.title}}</view>
+                                <view style="color:gray">{{data.goods.description}}</view>
+                            </view>
+                            <view style="color:red; font-size: 16px;">￥{{data.price}}</view>
+                        </view>
+                        <view class="count">x {{data.num}}</view>
+                    </view>
+
+                </view>
+                <view class="bottom">
+                    <view>{{item.created_at}}</view>
+                    <van-button type="primary" size="small">确认收货</van-button>
+                </view>
+            </view>
+        </scroll-view>
+    </van-tab>
+</van-tabs>

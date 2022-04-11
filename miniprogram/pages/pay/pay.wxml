@@ -1,0 +1,33 @@
+<!--pages/pay/pay.wxml-->
+<view class="address-wrap">
+    <view class="profile" bindtap="handleSetAddress">
+    <view class="name">
+        <text class="t1">{{address.name}}</text>
+        <text class="t2">{{address.phone}}</text>
+    </view>
+    <view class="address">
+{{address.province}}{{address.city}}{{address.county}}{{address.address}}
+    </view>
+    <van-icon name="arrow" size="40rpx" class="icon"/>
+    </view>
+
+    <scroll-view scroll-y class="goods-wrap">
+    <view class="goods-item" wx:for="{{goodsList}}" wx:key="index">
+        <view class="pic">
+            <image src="{{item.goods.cover_url}}" mode="widthFix"></image>
+        </view>
+        <view class="title">
+            <text>{{item.goods.description}}</text>
+            <text style="color:red">￥{{item.goods.price}}</text>
+        </view>
+        <view class="num">
+            x{{item.num}}
+        </view>
+    </view>
+    </scroll-view>
+    <van-submit-bar
+            price="{{ total*100 }}"
+            button-text="提交订单"
+            bind:submit="onSubmit"
+    />
+</view>

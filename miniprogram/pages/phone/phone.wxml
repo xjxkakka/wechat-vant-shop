@@ -1,0 +1,12 @@
+<!--pages/phone/phone.wxml-->
+<view class="phone">
+    <input bindinput="changePhone" type="text" value="815826084@qq.com"  placeholder="请输入手机号码"/>
+    <text style="{{codeBtn?'color:orange':''}}">获取验证码</text>
+</view>
+
+<view class="code">
+    <input bindinput="changeCode" placeholder="请输入验证码" value="123123" type="number" maxlength="6" />
+</view>
+<view class="btn">
+    <van-button bindtap="handleLogin" color="{{LoginBtn?'':'gray'}}"  block  size="normal " type="primary">登录</van-button>
+</view>

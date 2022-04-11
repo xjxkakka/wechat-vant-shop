@@ -1,0 +1,51 @@
+/* pages/address/address.less */
+.page-wrap{
+  height: 100vh;
+  width: 100vw;
+  .address-wrap{
+    margin: 0 auto;
+    height: 90vh;
+    width: 95vw;
+    .address-item{
+      height: 180rpx;
+      width: 100%;
+      padding-top: 40rpx;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid #C9C9C9;
+      .name{
+        margin-left: 40rpx;
+        font-size: 28rpx;
+        height: 50rpx;
+        .t1{
+          margin-right: 20rpx;
+        }
+      }
+      .address{
+        margin-left: 40rpx;
+        font-size: 28rpx;
+        height: 90rpx;
+        padding-top: 10rpx;
+        width: 560rpx;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /*想省略几行就写几*/
+        -webkit-box-orient: vertical;
+      }
+      .icon{
+        position: absolute;
+        right: 40rpx;
+        top: 90rpx;
+      }
+    }
+  }
+  .addAddress{
+    height: 10vh;
+    width: 95vw;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    left: 2.5vw;
+  }
+}

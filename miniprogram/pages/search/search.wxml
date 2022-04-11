@@ -1,0 +1,30 @@
+<!--pages/search/search.wxml-->
+<van-search background="#FFF"
+            shape="round" value="{{ value }}"
+            placeholder="请输入搜索关键词"
+            bind:search="onSearch"
+            bind:focus="onFocus"
+            bind:blur="onBlur"
+            show-action
+            bind:cancel="onCancel"
+>
+</van-search>
+<view class="history" wx:if="{{show}}">
+<view class="search-history">
+    <text>搜索历史</text>
+   <van-icon size="18px" name="delete-o" bindtap="handleDel"/>
+</view>
+
+    <view class="list">
+        <text wx:for="{{searchHistory}}" wx:key="index" bindtap="handleText" data-text="{{item}}">{{item}}</text>
+    </view>
+
+</view>
+
+ <!--    关联-->
+<view class="relevance" wx:else>
+<view class="keyword" wx:for="{{searchResult}}" wx:key="index" bindtap="handleDeatil" data-id="{{item.id}}">
+    {{item.title}}
+</view>
+    <view wx:if="{{again}}" style="text-align: center;">暂无搜索结果请重新搜索!</view>
+</view>
